@@ -295,6 +295,15 @@ function salesforce_form($options, $is_sidebar = false, $errors = null, $form_id
 		}
 
 		if ($input['type'] == 'text') {
+			if ($id == 'last_name') $placeholder = '山田';
+			if ($id == 'first_name') $placeholder = '太郎';
+			if ($id == 'company') $placeholder = '株式会社スペースマーケット';
+			if ($id == 'email') $placeholder = 'example@spacemarket.co.jp';
+			if ($id == 'phone') $placeholder = '0312345678';
+			if ($id == 'zip') $placeholder = '1600023';
+			if ($id == 'state') $placeholder = '東京都';
+			if ($id == 'city') $placeholder = '新宿区西新宿 6-15-1';
+			
 			$content .= "\t".'<input type="text" placeholder="'.$placeholder.'" value="'.$val.'" id="sf_'.$id.'" class="';
 			$content .= $options['wpcf7css'] ? 'wpcf7-form-control wpcf7-text' : 'w2linput text';
 			$content .= $options['wpcf7css'] && $input['required'] ? ' wpcf7-validates-as-required required' : '';
